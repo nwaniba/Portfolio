@@ -1,178 +1,56 @@
-# Portfolio
-My Portfolio
-# Samuel Omokhafe Dania – QA Portfolio
+# Samuel Omokhafe Dania | QA Engineer
+**Manual & Automation Testing | API Validation | Cypress & JavaScript**
 
-Software Tester | Manual & Automation QA | API Testing
-
-Welcome to my Quality Assurance portfolio. This repository showcases my experience in manual testing, defect tracking, API testing, and automation testing using Selenium with C# and NUnit.
+[LinkedIn](https://linkedin.com/in/samueldania) | [GitHub](https://github.com/nwaniba) | [Email](mailto:daniaomokhafe1@gmail.com)
 
 ---
 
-## Personal Information
-
-Full Name: Samuel Omokhafe Dania  
-Email: daniaomokhafe1@gmail.com  
-Phone: 09072995844 | 09091558084  
-
-LinkedIn: https://linkedin.com/in/samueldania  
-GitHub: https://github.com/nwaniba  
+## 🚀 Professional Summary
+Result-oriented Software Tester with experience validating enterprise-grade web applications. I specialize in identifying critical edge cases and ensuring system stability through modern testing strategies, including manual testing and automated regression suites using **Cypress**.
 
 ---
 
-## Professional Summary
-
-I am a Software Tester with experience in validating enterprise web applications and ensuring product quality through structured testing practices.
-
-My work includes designing test cases, executing functional and regression testing, identifying defects, validating APIs, and collaborating with developers to improve system stability and performance.
-
-I have participated in testing enterprise systems such as Dry Dock management platforms and inspection modules. I am currently expanding my expertise in automation testing using Selenium WebDriver with C# and NUnit.
-
----
-
-## Education & Training
-
-Federal University of Technology Minna  
-Bachelor's Degree – Urban and Regional Planning
-
-QA Training – Codebit Academy
-
-Training Focus:
-- Manual Software Testing
-- Test Case Design
-- API Testing with Postman
-- Automation Testing Fundamentals
+## 🛠 Technical Stack
+| Category | Tools & Technologies |
+| :--- | :--- |
+| **Automation** | Cypress, JavaScript/TypeScript, Selenium |
+| **API Testing** | Postman, REST API Validation |
+| **Manual QA** | Test Case Design, Regression Testing, Exploratory Testing |
+| **Management** | Jira, GitHub, Agile/Scrum, SQL (Basic) |
 
 ---
 
-## Technical Skills
+## 📂 Featured QA Projects
 
-### Manual Testing
-- Functional Testing
-- Regression Testing
-- Exploratory Testing
-- Test Case Design
-- Bug Reporting
+### 🚢 Dry Dock Job Management System
+*Functional & Regression Testing of maritime maintenance workflows.*
+* **Scope:** Validated job scheduling, project grouping, and real-time status updates.
+* **[View Test Cases](./docs/DryDock_TestCases.md)**
 
-### Automation Testing
-- Selenium WebDriver
-- C#
-- NUnit
+### 🔍 Inspection Module Testing
+*Validation of high-stakes data entry and UI integrity.*
+* **Key Bug Found:** Identified character limit bypass (Severity: Medium).
+* **[View Bug Report](./docs/Sample_Bug_Report.md)**
 
-### Tools
-- Jira
-- Postman
-- GitHub
-- SQL (basic validation)
+### 🔌 API Testing (Postman)
+*End-to-end validation of authentication and error handling.*
+* **[View Postman Collection](./docs/API_Testing.json)**
 
 ---
 
-## QA Projects
+## 💻 Automation Snippet (Cypress)
+*Modern, clean, and readable automation logic.*
 
-### 1. Inspection Module Testing
-
-Description  
-Tested inspection functionality used to record vessel inspection observations and recommendations.
-
-Testing Scope
-- Character limit validation
-- Data entry validation
-- UI display validation
-- Save and edit functionality
-
-Example Scenario
-
-Test: Observation field character limit
-
-Steps:
-1. Navigate to inspection screen
-2. Enter 700 characters
-3. Save record
-
-Expected Result  
-System should accept and save input successfully.
-
----
-
-### 2. Dry Dock Job Management System
-
-Description  
-Tested a Dry Dock job management system used to track maintenance activities.
-
-Testing Scope
-- Job scheduling
-- Project and vessel grouping
-- Job reporting screen validation
-- Status update workflows
-
-Methodology  
-Agile testing approach with continuous feedback to developers.
-
----
-
-### 3. API Testing Project
-
-Tool: Postman
-
-Tested APIs:
-- Login API
-- Authentication validation
-- Error handling
-
-Example Test Case
-
-Endpoint: POST /api/login
-
-Test Scenario: Valid login
-
-Expected Result:
-Status Code: 200  
-Response contains authentication token.
-
----
-
-## Automation Testing
-
-Sample automation test using Selenium WebDriver with C# and NUnit.
-
-Example Test Scenario: Verify login functionality.
-
-Test Steps
-1. Open browser
-2. Navigate to login page
-3. Enter username and password
-4. Click login
-5. Verify dashboard loads
-
-Automation tools used:
-- Selenium WebDriver
-- C#
-- NUnit
-
----
-
-## Bug Reporting Example
-
-Bug Title: Observation Field Accepts More Than 700 Characters
-
-Steps to Reproduce:
-1. Navigate to inspection screen
-2. Enter 750 characters in observation field
-3. Save record
-
-Expected Result:
-System should restrict input to 700 characters.
-
-Actual Result:
-System allows more than the specified character limit.
-
-Severity: Medium  
-Priority: High
-
----
-
-## Contact
-
-Email: daniaomokhafe1@gmail.com  
-LinkedIn: https://linkedin.com/in/samueldania  
-
-Thank you for reviewing my QA portfolio.
+```javascript
+describe('User Login Flow', () => {
+  it('should successfully log in with valid credentials', () => {
+    cy.visit('/login');
+    cy.get('#username').type('test_user');
+    cy.get('#password').type('securePassword123');
+    cy.get('#login-btn').click();
+    
+    // Assert dashboard load
+    cy.url().should('include', '/dashboard');
+    cy.get('.welcome-message').should('be.visible');
+  });
+});
