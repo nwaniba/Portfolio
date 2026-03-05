@@ -54,3 +54,6 @@ describe('User Login Flow', () => {
     cy.get('.welcome-message').should('be.visible');
   });
 });
+
+📫 Contact Me
+I am open to QA Engineering roles. Feel free to reach out via LinkedIn.
